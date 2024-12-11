@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Remove All Entries</title>
+        <link rel="stylesheet" href="/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    </head>
+    <script>
+        function confirmRemove(event) {
+            let message = "Are you sure you want to remove all entries?\n";
+            const confirmed = window.confirm(message);
+            if (!confirmed) {
+                event.preventDefault();
+            }
+        }
+    </script>
+    <body>
+        <h1>Removing All Entries</h1>
+        <form method="POST" action="/processRemove" onsubmit="confirmRemove(event)">
+            <button type="submit" class="button-style">Remove All Entries</button>
+        </form>
+        <br>
+        <a href="/"><button class="button-style">Go Back to Main Page</button></a>
+    </body>

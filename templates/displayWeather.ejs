@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Main Page</title>
+        <link rel="stylesheet" href="/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>Weather Results</h1>
+        </header>
+        <main>
+            <% if (weatherData) { %>
+                <div class=""weather-container>
+                    <h2>Location: <%= weatherData.location %></h2>
+                    <p>Temperature: <%= weatherData.temperature %>°C</p>
+                    <p>Condition: <%= weatherData.condition %></p>
+                    <p>Humidity: <%= weatherData.humidity %>%</p>
+                    <p>Wind Speed: <%= weatherData.windSpeed %> km/h</p>
+                    <img src="<%= weatherData.iconUrl %>" alt="Weather Icon" class="weather-icon" />
+                </div>
+            <% } else { %>
+                <p>No weather data available. Please go back and try again.</p>
+            <% } %>
+        </main>
+        <footer>
+            <a href="/">Go Back</a>
+        </footer>
+    </body>
+</html>
